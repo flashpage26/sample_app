@@ -15,7 +15,7 @@
 <% else %>
 
 
-  <h1>Welcome to Chitter!	<%= link_to image_tag("logo.png", :alt => "Sample App", :class => "round"), root_path %></h1>
+  <h1>Welcome to Chitter!</h1>
   <p>
     
 	Why Twitter when you can Chitter? Stay connected to friends and family on a platform that
@@ -23,7 +23,7 @@
   </p>
 
   <div class="world">
-		<%= link_to image_tag("world.png", :class => "round"), root_path %>
+	<img src="/../../assets/world.png" class="round" />
   </div>
 
   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
