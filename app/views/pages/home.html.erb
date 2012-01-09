@@ -1,2 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">Chitter Chatter!</h1>
+        <%= render 'shared/micropost_form' %>
+		<%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+		<%= render 'shared/stats' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+
+
+  <h1>Welcome to Chitter!</h1>
+  <p>
+    
+	Why Twitter when you can Chitter? Stay connected to friends and family on a platform that
+	will help you maintain relationships and interact with others on a large scale!
+  </p>
+
+  <div class="world">
+		<%= link_to image_tag("world.png", :class => "round"), root_path %>
+  </div>
+
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+
+<% end %>
